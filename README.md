@@ -20,6 +20,8 @@ func TestParseDuration(tt *testing.T) {
 }
 ```
 
+See https://github.com/golang/go/issues/25951 for examples of when this is helpful.
+
 ## License
 
 Copyright 2021 FerretDB Inc. Licensed under Apache License v2.0.
