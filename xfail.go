@@ -1,4 +1,4 @@
-// Package xfail provides testing helpers for expected tests failures.
+// Package xfail provides a testing helper for expected test failures.
 package xfail
 
 import (
@@ -10,7 +10,7 @@ import (
 //
 // At the end of the test, if it was marked as failed using non-fatal methods Fail, Error, or Errorf,
 // it will pass instead.
-// If it wasn't marked as failed, it will fail so that XFail call can be removed.
+// If it wasn't marked as failed, it will fail so that the XFail call can be removed.
 // Fatal methods FailNow, Fatal, or Fatalf will skip the rest of the test instead.
 func XFail(tb testing.TB, reason string) testing.TB {
 	tb.Helper()
