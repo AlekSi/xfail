@@ -1,5 +1,3 @@
-module github.com/FerretDB/xfail
+module github.com/AlekSi/xfail
 
-go 1.21
-
-toolchain go1.22.2
+go 1.25

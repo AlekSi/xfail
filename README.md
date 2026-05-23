@@ -1,5 +1,7 @@
 # xfail
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/AlekSi/xfail.svg)](https://pkg.go.dev/github.com/AlekSi/xfail)
+
 Go package providing testing helpers for expected tests failures.
 
 ## Examples

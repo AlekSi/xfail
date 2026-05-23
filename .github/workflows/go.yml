@@ -1,0 +1,39 @@
+---
+name: Go
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: "12 3 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test with ${{ matrix.go }}
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ["1.25.x", "1.26.x"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Run tests
+        run: go test -race -count=1 -v ./...
+
+      - name: Check dirtiness
+        run: |
+          git status
+          git diff --exit-code
